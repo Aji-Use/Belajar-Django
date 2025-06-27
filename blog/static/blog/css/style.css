@@ -1,0 +1,29 @@
+
+.card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+.search-bar {
+  margin-top: 20px;
+}
+.category-btns {
+  margin: 20px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.category-btns .btn {
+  margin-right: 10px;
+}
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.card-text {
+  font-size: 0.85rem;
+  color: #666;
+}

@@ -1,0 +1,16 @@
+{% extends "blog/snippets/base_detailpost.html" %}
+{% block content %}
+    <div class="container-fluid intro-section">
+        <div class="intro-content">
+            <p class="highlight">FOODS AND DRINKS</p>
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.body}}</p><br>
+            <h2>Receipe</h2>
+            <p>{{ post.receipes}}</p>
+        </div>
+        <div class="image-container">
+            <img src="{{post.linkImg}}" alt="{{ post.title }}">
+        </div>
+    </div>
+{% endblock content %}
+
