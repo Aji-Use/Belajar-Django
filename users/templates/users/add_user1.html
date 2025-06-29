@@ -1,0 +1,14 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+    <div class="container margin-auto mt-100px">
+        <form method="POST">
+            {% csrf_token %}
+        
+            {{form.as_table}}
+            
+            <button class= "btn btn-primary">Simpan</button>
+        </form>
+    </div>
+{% endblock content %}
+
