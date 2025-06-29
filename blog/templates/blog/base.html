@@ -11,6 +11,9 @@
 <body>
 
 <div class="container py-3">
+  
+  <!-- Nav Bar -->
+  {% block navbar %}{% endblock navbar %}
   <!-- Search Bar -->
   <div class="input-group search-bar">
     <input type="text" class="form-control" placeholder="Cari resep cemilan, makanan, minuman..." />
@@ -18,18 +21,7 @@
   </div>
 
   <!-- Category Buttons -->
-    <div class="category-btns d-flex flex-wrap">
-        <a href="{% url 'blog:blog' %}">
-          <button class="btn btn-outline-primary btn-sm {% if request.resolver_match.url_name == 'blog' %} active text-primary text-white {% endif %}">All</button>
-        </a>
-        {% for cat in categories %}
-          {% with cat|lower as title %}
-          <a href="{% url 'blog:category_post' categoryInput=title %}">
-            <button class="btn btn-outline-primary btn-sm {% if request.path == '/blog/'|add:title|add:'/' %} active text-primary text-white {% endif %}">{{ cat }}</button>
-          </a>
-          {% endwith %}
-        {% endfor %}
-    </div>
+    {% block category_buttons %}{% endblock category_buttons %}
 
   <!-- Card Grid -->
    <div class="container-card">

@@ -1,11 +1,20 @@
 {% extends "blog/snippets/base_detailpost.html" %}
+
+{% comment %} navbar {% endcomment %}
+{% block navbar %}
+    {% include 'blog/snippets/nav_blog.html' %}
+{% endblock navbar %}
+    
+
+{% comment %} content {% endcomment %}
 {% block content %}
     <div class="container-fluid intro-section">
         <div class="intro-content">
             <p class="highlight">FOODS AND DRINKS</p>
             <h1>{{ post.title }}</h1>
+            <h5>Steps</h5>
             <p>{{ post.body}}</p><br>
-            <h2>Receipe</h2>
+            <h5>Receipe</h5>
             <p>{{ post.receipes}}</p>
         </div>
         <div class="image-container">

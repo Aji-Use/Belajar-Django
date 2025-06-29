@@ -5,16 +5,17 @@ from django.utils.text import slugify
 class Post(models.Model):
     
     title = models.CharField(max_length=255)
-    linkImg = models.URLField(default='https://example.com/default.jpg')
+    linkImg = models.URLField()
     body = models.TextField()
-    receipes = models.TextField(default='write a receipe')
+    receipes = models.TextField()
     category = models.CharField(max_length=255)
     dateTime = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(blank=True, editable=False)
     
-    def save(self):
+    def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Post, self).save()
+        self.category = self.category.lower()
+        super(Post, self).save(*args, **kwargs)
     
     def __str__(self):
         return f"{self.id} {self.title}" # pylint: disable=no-member

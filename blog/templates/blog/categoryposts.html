@@ -1,4 +1,16 @@
 {% extends "blog/base.html" %}
+
+{% comment %} navbar {% endcomment %}
+{% block navbar %}
+    {% include 'blog/snippets/nav_blog.html' %}
+{% endblock navbar %}
+
+{% comment %} category buttons {% endcomment %}
+{% block category_buttons %}
+    {% include "blog/snippets/category_buttons.html" %}
+{% endblock category_buttons %}
+
+{% comment %} content {% endcomment %}
 {% block content %}
     <h2 class="mb-4">Kategori: {{active_category|title}}</h2>
     
